@@ -1,0 +1,8 @@
+<div class="comment-list">
+    <h3 class="comment-header">Comments ({{ comments.length }})</h3>
+    <div *ngIf="comments.length === 0" class="loading">Loading comments...</div>
+    <app-comment 
+      *ngFor="let comment of comments" 
+      [comment]="comment"
+    ></app-comment>
+  </div>

@@ -1,0 +1,9 @@
+<div class="post-list">
+    <div *ngIf="posts.length === 0" class="loading">Loading posts...</div>
+    <app-post 
+      *ngFor="let post of posts" 
+      [post]="post"
+      [selectedPostId]="selectedPostId"
+      (postClick)="onPostClick($event)"
+    ></app-post>
+  </div>

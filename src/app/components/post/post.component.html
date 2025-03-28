@@ -1,0 +1,33 @@
+<div class="post" [class.selected]="isSelected" (click)="onPostClick()">
+    <div class="post-avatar">
+      <img src="https://via.placeholder.com/50" alt="Avatar">
+    </div>
+    <div class="post-content">
+      <div class="post-header">
+        <span class="user-name">User {{ post.userId }}</span>
+        <span class="post-id">Post {{ post.id }}</span>
+      </div>
+      <div class="post-body">
+        <h4 class="post-title">{{ post.title }}</h4>
+        <p class="post-text">{{ post.body }}</p>
+      </div>
+      <div class="post-actions">
+        <div class="action-button">
+          <span class="icon">💬</span>
+          <span>200</span>
+        </div>
+        <div class="action-button">
+          <span class="icon">🔄</span>
+          <span>200</span>
+        </div>
+        <div class="action-button">
+          <span class="icon">❤️</span>
+          <span>200</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="comments-container" *ngIf="isSelected">
+      <app-comment-list [postId]="post.id"></app-comment-list>
+    </div>
+  </div>
